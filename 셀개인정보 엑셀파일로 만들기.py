@@ -3,7 +3,7 @@ import os
 directory = "personal_info/"
 outfile_name = "merged_personal_info.csv"
 
-out_file = open(outfile_name,'w')
+out_file = open(outfile_name,'w', encoding="utf8")
 
 files = os.listdir(directory)
 
@@ -13,7 +13,7 @@ outfile_has_header = False
 for filename in files:
     if ".txt" not in filename:
         continue
-    file = open (directory + filename)
+    file = open (directory + filename, encoding="utf8")
     contents = []
     for line in file:
         if ":" in line:
